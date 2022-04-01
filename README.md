@@ -9,11 +9,11 @@ choco install make
 ```bash
 {
 	"name": "consumer-group-1",
-	"image": "registry.cp.kpn-dsh.com/ordina-codestar-2/transformer:1",
+	"image": "registry.cp.kpn-dsh.com/ordina-codestar-2/consumer-group-1:1",
 	"cpus": 0.1,
 	"mem": 256,
 	"env": {
-		"KAFKA_TOPIC_FROM": "internal.gecombineerd-ordina-codestar-1"
+		"KAFKA_TOPIC_FROM": "aanpassing-vereist-stream-invoeren"
 	},
 	"instances": 1,
 	"singleInstance": false,
@@ -27,7 +27,7 @@ choco install make
 # 1 ) Opdracht uitvoeren
 - a. Pas de groepsnummer aan in de makefile
 - b. Print de events uit de stream "internal.gecombineerd-ordina-codestar-1" , zie https://kafka.js.org/docs/getting-started
-- c. Maak een service aan de DSH met de naam "consumer-group-1" <--- voeg de juiste groepsnummer toe
+- c. Maak een service aan op de DSH met de naam en image "consumer-group-1" <--- voeg de juiste groepsnummer toe
 
 - *bij elke aanpassing wordt geacht om de wijzigingen te pushen en te testen op de DSH (make all) & services restarten op de DSH*
 
