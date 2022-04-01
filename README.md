@@ -22,6 +22,8 @@ choco install make
 }
 ```
 
+# TENANT ordina-codestar-2
+
 # 1 ) Opdracht uitvoeren
 - a. Pas de groepsnummer aan in de makefile
 - b. Print de events uit de stream "internal.gecombineerd-ordina-codestar-1" , zie https://kafka.js.org/docs/getting-started
