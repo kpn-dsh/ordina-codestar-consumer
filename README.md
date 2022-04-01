@@ -12,7 +12,7 @@
 	"cpus": 0.1,
 	"mem": 256,
 	"env": {
-		"KAFKA_TOPIC_FROM": "aanpassing-vereist-stream-invoeren"
+		"KAFKA_TOPIC_FROM": "change-required"
 	},
 	"instances": 1,
 	"singleInstance": false,
@@ -25,8 +25,11 @@
 
 # 1 ) Assignments
 - a. Change the group number in the makefile. e.g: "tagname=consumer-group-1" <--- add the correct group number. 
-- b. Print events from the stream "internal.gecombineerd-ordina-codestar-1", zie https://kafka.js.org/docs/getting-started.
+
+- b. Print events from the stream "internal.gecombineerd-ordina-codestar-1", see https://kafka.js.org/docs/getting-started. Make sure that only the messages intended for you group are printed. TIP: create a filter function.
+
 - c. Create a service on the DSH with the name "consumer-group-1" <--- add the correct group number. Also change the service config on the DSH with the correct image name e.g: "image": "registry.cp.kpn-dsh.com/ordina-codestar-2/consumer-group-1:1"
+
 - d. docker login registry.cp.kpn-dsh.com. You can find your credentials in the image repo under the userprofile.
 
 - *It's important to push the changes to the image repository so you can test it on the DSH. Also make sure you restart the service*
