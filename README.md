@@ -1,6 +1,6 @@
 # Wat heb je nodig ?
 
-- Toegang tot dsh console           -> https://console.poc.kpn-dsh.com
+- Toegang tot DSH console           -> https://console.poc.kpn-dsh.com
 - Toegang tot de docker image repo  -> https://registry.cp.kpn-dsh.com/
 - Docker                            -> https://hub.docker.com/_/hello-world
 - Make                              -> https://chocolatey.org/install en vervolgens voer uit 
@@ -32,6 +32,7 @@ choco install make
 - *bij elke aanpassing wordt geacht om de wijzigingen te pushen en te testen op de DSH (make all) & services restarten op de DSH*
 
 # 2 ) Nieuwe image bakken en pushen.
+- Voor de docker login heb je credentials nodig. Je kan deze terugvinden in image repository -> user profile.
 ```sh
 command : docker login registry.cp.kpn-dsh.com
 command : make all
