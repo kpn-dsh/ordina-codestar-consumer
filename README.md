@@ -32,7 +32,7 @@ choco install make
 - *bij elke aanpassing wordt geacht om de wijzigingen te pushen en te testen op de DSH (make all) & services restarten op de DSH*
 
 # 2 ) Nieuwe image bakken en pushen.
-- Voor de docker login heb je credentials nodig. Je kan deze terugvinden in image repository -> user profile.
+- Voor de docker login heb je credentials nodig. Je kan deze terugvinden in de image repository -> user profile.
 ```sh
 command : docker login registry.cp.kpn-dsh.com
 command : make all
