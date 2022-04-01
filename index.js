@@ -54,7 +54,7 @@ class simpleConsumer{
             await this.consumer.run({
 
                 eachMessage: async ({topic, partition, message}) => {
-                   
+                   console.log("please print some messages")
                 }
             })
         }    

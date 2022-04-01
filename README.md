@@ -1,11 +1,10 @@
-# Wat heb je nodig ?
+# What do you need ?
 
-- Toegang tot DSH console           -> https://console.poc.kpn-dsh.com
-- Toegang tot de docker image repo  -> https://registry.cp.kpn-dsh.com/
+- Access to the DSH console         -> https://console.poc.kpn-dsh.com
+- Access to the docker image repo  	-> https://registry.cp.kpn-dsh.com/
 - Docker                            -> https://hub.docker.com/_/hello-world
-- Make                              -> https://chocolatey.org/install en vervolgens voer uit 
-choco install make  
-- Voorbeeld config een nieuwe service op de DSH
+- Make                              -> install -> https://chocolatey.org/install & choco install make  
+- Example config of a service on the DSH
 ```bash
 {
 	"name": "consumer-group-1",
@@ -24,15 +23,15 @@ choco install make
 
 # TENANT ordina-codestar-2
 
-# 1 ) Opdracht uitvoeren
-- a. Pas de groepsnummer aan in de makefile
-- b. Print de events uit de stream "internal.gecombineerd-ordina-codestar-1" , zie https://kafka.js.org/docs/getting-started
-- c. Maak een service aan op de DSH met de naam en image "consumer-group-1" <--- voeg de juiste groepsnummer toe
+# 1 ) Assignments
+- a. Change the group number in the makefile. e.g: "tagname=consumer-group-1" <--- add the correct group number. Also change the service config on the DSH with the correct image name e.g: "image": "registry.cp.kpn-dsh.com/ordina-codestar-2/consumer-group-1:1"
+- b. Print events from the stream "internal.gecombineerd-ordina-codestar-1", zie https://kafka.js.org/docs/getting-started.
+- c. Create a service on the DSH with the name "consumer-group-1" <--- add the correct group number. 
 
-- *bij elke aanpassing wordt geacht om de wijzigingen te pushen en te testen op de DSH (make all) & services restarten op de DSH*
+- *It's important to push the changes to the image repository so you can test it on the DSH. Also make sure you restart the service*
 
-# 2 ) Nieuwe image bakken en pushen.
-- Voor de docker login heb je credentials nodig. Je kan deze terugvinden in de image repository -> user profile.
+# 2 ) Docker login & Make all.
+- You need credentials for the command docker login. You can find you credentials in the image repo under the userprofile.
 ```sh
 command : docker login registry.cp.kpn-dsh.com
 command : make all
